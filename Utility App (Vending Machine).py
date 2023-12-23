@@ -431,7 +431,7 @@ class IsaacMarquezVendingMachine:
             if buy_again.lower() != "yes": # Determines if the user choses not to buy again and exit the loop.
                 break
 
-# Code that enables recommendations after each succesful transaction.
+# Code that enables recommendations after each successful transaction.
             if self.selected_item_name:
                 # Call the suggest_item method to provide recommendations based on the selected item.
                 self.suggest_item(self.selected_item_name)
