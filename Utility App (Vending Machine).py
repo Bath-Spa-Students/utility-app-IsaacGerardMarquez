@@ -1,4 +1,3 @@
-
 # Define class named IsaacMarquezVendingMachine that is representing a vending machine.
 class IsaacMarquezVendingMachine:
     # The __init__ method is the constructor of the class. 
@@ -13,6 +12,7 @@ class IsaacMarquezVendingMachine:
             "5": "Hot Drink",
             "6": "Bread",
         }
+
         # Creating a Dictionary of items with item codes and details (which includes the Name, Price, Stock, and Category).
         self.items = {
             # Snacks
@@ -57,6 +57,7 @@ class IsaacMarquezVendingMachine:
             "BREAD4": {"Name": "Chocolate Muffin", "Price": 5, "Stock": 5, "Category": "Bread"},
             "BREAD5": {"Name": "Donut", "Price": 5, "Stock": 5, "Category": "Bread"},
         }
+
         # This variable is used to store the amount of money that the user has inserted into the vending machine. It is initialized to 0.
         self.user_money = 0
         # This list is used to store the items that the user has selected during a transaction. It is initialized as an empty list and items are added to it as the user makes selections.
@@ -89,7 +90,6 @@ class IsaacMarquezVendingMachine:
             print(f"""｜{num}｜: {category}""")
             print("""┏━━┳━━┳━━┳━━┳━━┳━━┳━━┳━━┳━━┳━━┳━━┳━━┳━━┳━━┳━━┳━━┓
 ┗━━┻━━┻━━┻━━┻━━┻━━┻━━┻━━┻━━┻━━┻━━┻━━┻━━┻━━┻━━┻━━┛""")
-
 
 # The select_category method is used to prompt the user to select a category by entering the corresponding number. 
 # It then calls the display_items method to show the items available in the selected category.
@@ -131,7 +131,6 @@ class IsaacMarquezVendingMachine:
             if item["Category"] == category:
                 print(f"│ {item_code.ljust(10)} ║ {item['Name'].ljust(16)} ║ ${str(item['Price']).ljust(8)} ║ {str(item['Stock']).ljust(7)} │")
         print("╰────────────╨──────────────────╨───────────╨─────────╯")
-
 
 # The select_item method is used to prompt the user to enter the code of the item they want to purchase. 
     def select_item(self):
@@ -231,8 +230,8 @@ class IsaacMarquezVendingMachine:
             elif payment_method_choice == "2":  # Debit card payment
                 while True: #  Create a loop that would ensure that the user gets a chance to input correct details.
                     try:
-                        debit_card_number = input("Enter your debit card number: ") # User input to collect the user's Debit Card Number.
-                        pin_code = input("Enter your debit card PIN code: ") # User input to collect the user's Debit Card PIN Code.
+                        debit_card_number = input("Enter your Debit Card number: ") # User input to collect the user's Debit Card Number.
+                        pin_code = input("Enter your Debit Card PIN code: ") # User input to collect the user's Debit Card PIN Code.
 
                         # Takes and converts the user's input for the amount they want to spend using the debit card.
                         self.user_money = float(input("""
@@ -334,7 +333,7 @@ class IsaacMarquezVendingMachine:
                     if self.selected_items:
                         print("")
                         print("Transaction completed. Enjoy your items!") # Printing a message displaying that the transaction completed successfully.
-                        print("Dispensing", self.selected_item_name)  # Display the specific item being dispensed
+                        print("Dispensing", self.selected_item_name,"...")  # Display the specific item being dispensed
                         
                         # Suggest a pairing for the selected item.
                         self.suggest_item(self.selected_item_name)
